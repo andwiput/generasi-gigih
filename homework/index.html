@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--title-->
+        <title>My Playlist</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--make h1-->
+        <h1>Create Playlist</h1>
+
+        <!--make form-->
+        <form action="#">
+            <label for="input-title">Title :</label>
+            <input type="text" id="input-title" />
+            <br>
+            <label for="input-desc">Description :</label>
+            <input type="text" id="input-desc" />
+            <br>
+            <!--submit button-->
+            <button id="btn-submit" type="submit">Submit</button>
+        </form>
+        <div class="playlist">
+            <div class="card-playlist">
+                <!--image-->
+                <img src="image/pict1.jpg" alt="Album image" width="150px">
+                <div class="description">
+                    <!--title-->
+                    <p class="title">Yesterday</p>
+                    <!--artist-->
+                    <p class="artist">Official Higedandism</p>
+                    <!--albums-->
+                    <p class="album">Traveler</p>
+                </div>
+                <!--button does nothing-->
+                <button class="btn-playlist">Play</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
