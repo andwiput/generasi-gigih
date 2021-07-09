@@ -25,12 +25,31 @@ const avgAge = (students) => {
     return totAge / students.length;
 };
 
-//function ketika button clicked
-const handleClick = () => {
-  const calAvgAge = avgAge(students);
-  document.getElementById("avg").innerHTML = calAvgAge;
+//Promise Avg
+const promiseHandler = () => {
+  return new Promise((resolve,reject) => {
+    console.log("calculation start");
+    console.log("second call started");
+
+    setTimeout(()=>{
+      console.log("second call finished");
+      console.log("third call started");
+      return setTimeout(()=>{
+        console.log("third call finished");
+        return resolve();
+      },3000);
+    },2000);
+  });
 };
 
-//eventlistener onclick
-document.getElementById("calbtn").addEventListener("click",handleClick);
+const btn = document.getElementById("calbtn");
 
+//function ketika button clicked
+btn.onclick = () => {
+  const calAvgAge = avgAge(students);
+  promiseHandler()
+  .then((res)=>{
+    console.log(calAvgAge);
+    document.getElementById("avg").innerHTML = calAvgAge;
+  })  
+};
